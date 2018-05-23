@@ -1,0 +1,224 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+
+    <title>Codar</title>
+
+</head>
+<body>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <!--<div class="top-content" style="position: relative; z-index: 0; ">-->
+    
+        <!-- Top menu -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="/">Codar gerenciador</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Início
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accounts:add_user' %}"><button type="button" class="btn btn-sm btn-outline-success">Registrar</button>
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><button type="button" class="btn btn-sm btn-outline-info"><i class="fas fa-user-circle"></i> Entrar</button></a>
+                </li>
+            </ul>
+        </div>
+    </nav>  
+    
+    {% block body %}    
+    
+    <div class="inner-bg bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 phone wow fadeInLeft animated text-center" style="visibility: visible; animation-name: fadeInLeft;">
+                    <img style="display: inline;" class="img-responsive"  src="{% static "img/cad.svg" %}">
+                </div>
+                <div class="col-sm-5 text wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                    <h1 style="color:aliceblue;">Organize suas finanças!</h1>
+                    <div class="description" style="color:aliceblue;">
+                        Com o gerenciador financeiro, controlar os seus gastos ficou mais fácil e intuitivo.
+                        Você organiza com detalhes todas os seus gastos e investimentos com poucos cliques e consegue vizualizar de forma simples para onde vai o seu dinheiro.
+                        </div>
+                        <div class="top-big-link">
+                            <a href="{% url 'accounts:add_user' %}" class="btn btn-link-1">Increver-se</a>
+                            <a href="#" class="btn btn-link-2 scroll-link">Entrar</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    
+    
+    
+    
+    <div class="app-features-container section-container bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 app-features section-description wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+                    <h2>Você Pode:</h2>
+                    <div class="divider-1 wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 app-features-wrapper wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="app-features-box">
+                        <h3>Cadastrar suas despesas!</h3>
+                        <p>Cadastre suas despesas e organize em categorias. Saiba quanto você gasta por mês e onde você pode economizar.</p>
+                    </div>
+                    <div class="app-features-box">
+                        <h3>Cadastrar suas receitas!</h3>
+                        <p>Você pode controlar todas as suas receitas e controlar o quanto você tem disponível.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 app-features-image wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    
+                </div>
+                <div class="col-sm-4 app-features-wrapper wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="app-features-box">
+                        <h3>Definir metas!</h3>
+                        <p>Você pode planejar uma meta de gasto mensal e se manter no planejamento. Poupar fica cada vez mais fácil.</p>
+                    </div>
+                    <div class="app-features-box">
+                        <h3>Investir com segurança!</h3>
+                        <p>Com o simulador de investimentos, você pode ver antecipadamente quanto aquele seu investimento irá lhe render.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="how-it-works-container section-container section-container-image-bg" style="position: relative; z-index: 0; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 how-it-works section-description wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+                    <h2>Como Funciona?</h2>
+                    <div class="divider-1 wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-1 how-it-works-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="how-it-works-box-icon">
+                        
+                    </div>
+                    <h3>Cadastre-se</h3>
+                    <p>Realize o seu cadastro e tenha acesso à todas as ferramentas.</p>
+                </div>
+                <div class="col-sm-6 col-sm-offset-2 how-it-works-box wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    <div class="how-it-works-box-icon">
+                        
+                        
+                    </div>
+                    <h3>Confirme o cadastro</h3>
+                    <p>Verifique o seu cadastro, pelo seu e-mail e tenha acesso imediato!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-1 how-it-works-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="how-it-works-box-icon">
+                        
+                    </div>
+                    <h3>Entre</h3>
+                    <p>Informe o seu login e senha para entrar na ferramenta.</p>
+                </div>
+                <div class="col-sm-6 col-sm-offset-2 how-it-works-box wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    <div class="how-it-works-box-icon">
+                        
+                    </div>
+                    <h3>Agora é só usar!</h3>
+                    <p>Pronto! Você está pronto para o usar o gerenciador. Tudo que você precisa fazer é aproveitar!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 section-bottom-button wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                    <a href="{% url 'accounts:add_user' %}" class="btn btn-link-1 scroll-link">Inscrever-se</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock body %}
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">            
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <ul class="list-unstyled list-inline social text-center">                        
+                        <li class="list-inline-item">
+                            <a href="javascript:void();">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void();">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void();">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void();" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void();" target="_blank">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </hr>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                    <p>Desenvolvido por - Felipe Batista</p>
+                    <p class="h6">&copy All right Reversed.</p>
+                </div>
+                </hr>
+            </div>
+        </div>
+    </section>
+    <!-- ./Footer -->
+    <script src="{% static "js/jquery-slim.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/popper.min.js" %}"></script>
+
+</body>    
+</html>

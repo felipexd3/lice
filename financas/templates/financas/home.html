@@ -1,0 +1,122 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/home.css" %}" rel="stylesheet">
+
+    <title>Codar</title>
+
+</head>
+
+<body>
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
+    <!--<div class="top-content" style="position: relative; z-index: 0; ">-->
+
+    <!-- Top menu -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="/">Codar gerenciador</a>
+        <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>-->
+
+        <div class="navbar-expand ml-auto" id="navbarSupportedContent">           
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <button type="button" class="btn btn-sm btn-outline-dark">
+                            <i class="fas fa-user-circle"></i> Olá, {{ user.first_name }}
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container div-charts-values"> 
+
+        <div class="row row-charts-values" style="padding: 0;">
+            
+            <div class="col rounded charts-values clearfix">                
+                <i class="fas fa-dollar-sign fa-3x rounded" style="margin-top: .2rem; margin-left: -.2rem; float: left;  color: white; background-color: rgb(18, 122, 190); padding-right: 2.4rem; padding-left: 1rem; padding-top: 1rem; padding-bottom: 1.6rem;"></i>
+                <h3 style="margin-right: 1rem; margin-top: 1.6rem; float: right;">{{ dados.total }}</h3>
+            </div>
+
+            <div class="col rounded charts-values">
+                <i class="fas fa-chart-line fa-3x rounded" style="float: left; margin-top: .2rem; margin-left: -.2rem; color: white; background-color: rgb(16, 194, 111); padding-right: 1rem; padding-left: 1rem; padding-top: 1rem; padding-bottom: 1.6rem;"></i>
+                <h3 style="float: right; margin-right: 1rem; margin-top: 1.6rem;">{{ dados.receitas }}</h3>
+            </div>
+
+            <div class="col rounded charts-values">
+                <i class="fas fa-chart-line fa-3x rounded" style="float: left; margin-top: .2rem; margin-left: -.2rem; color: white; background-color: rgb(204, 42, 69); padding-right: 1rem; padding-left: 1rem; padding-top: 1rem; padding-bottom: 1.6rem;"></i>
+                <h3 style="float: right; margin-right: 1rem; margin-top: 1.6rem;">{{ dados.despesas }}</h3>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col rounded chart-lists">
+                <table class="table table-borderless table-hover">
+                    <p><h6>Últimas Receitas:</h6></p>
+                    <thead>
+                        <tr>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for r in dados.lista_receitas %}
+                        <tr>
+                            <td>{{ r.descricao }}</td>
+                            <td>{{ r.get_categoria_display }}</td>
+                            <td>{{ r.valor }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col rounded chart-lists">
+                <table class="table table-borderless table-hover">
+                    <p>
+                        <h6>Últimas Despesas:</h6>
+                    </p>
+                    <thead>
+                        <tr>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for d in dados.lista_despesas %}
+                        <tr>
+                            <td>{{ d.descricao }}</td>
+                            <td>{{ d.get_categoria_display }}</td>
+                            <td>{{ d.valor }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="{% static "js/jquery-slim.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/popper.min.js" %}"></script>
+
+</body>
+</html>
